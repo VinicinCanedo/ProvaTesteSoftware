@@ -71,6 +71,22 @@ Então eu removo um dos produtos do carrinho
 
 ---
 
+### Funcionalidade: Checkout
+
+#### Cenário: Finalizar uma Compra com Sucesso
+```gherkin
+Dado que eu adicionei um produto ao carrinho
+Quando eu acesso o carrinho
+E realizo o checkout
+E preencho o campo First Name
+E preencho o campo Last Name
+E preencho o campo Zip/Postal Code
+E vejo os detalhes do checkout
+Então eu finalizo a compra
+```
+
+---
+
 ## Como Executar os Testes
 
 Para executar os testes, você precisa ter o Python, Robot Framework e SeleniumLibrary instalados.

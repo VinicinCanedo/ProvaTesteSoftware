@@ -5,41 +5,43 @@ Library           SeleniumLibrary
 *** Test Cases ***
 Valida acesso
     Abrir página da SauceDemo
-    Capture Page Screenshot    Carrinho/evidencias/saucedemo.png
+    Capture Page Screenshot    Checkout/evidencias/saucedemo.png
     
     E preencho o campo Username
-    Capture Page Screenshot    Carrinho/evidencias/username_login.png
+    Capture Page Screenshot    Checkout/evidencias/username_login.png
 
     E preencho o campo Password
-    Capture Page Screenshot    Carrinho/evidencias/senha_login.png
+    Capture Page Screenshot    Checkout/evidencias/senha_login.png
 
     E acesso a plataforma
-    Capture Page Screenshot    Carrinho/evidencias/acesso_plataforma.png
+    Capture Page Screenshot    Checkout/evidencias/acesso_plataforma.png
 
     E vejo os detalhes de um produto
-    Capture Page Screenshot    Carrinho/evidencias/view_produtos.png
+    Capture Page Screenshot    Checkout/evidencias/view_produtos.png
 
     E adiciono um produto ao carrinho
-    Capture Page Screenshot    Carrinho/evidencias/add_produto.png
-
-    E retorno a página inicial
-    Capture Page Screenshot    Carrinho/evidencias/retorno_produtos.png
-
-    E vejo os detalhes de um outro produto
-    Capture Page Screenshot    Carrinho/evidencias/view_produtos2.png
-
-    E adiciono o outro produto ao carrinho
-    Capture Page Screenshot    Carrinho/evidencias/add_produto2.png
+    Capture Page Screenshot    Checkout/evidencias/add_produto.png
 
     E acesso o carrinho
-    Capture Page Screenshot    Carrinho/evidencias/acesso_carrinho1.png
-
-    E removo um produto do carrinho
-    Capture Page Screenshot    Carrinho/evidencias/remove_produto.png
+    Capture Page Screenshot    Checkout/evidencias/acesso_carrinho1.png
 
     E realizo o checkout
-    Capture Page Screenshot    Carrinho/evidencias/checkout.png
-    
+    Capture Page Screenshot    Checkout/evidencias/checkout.png
+
+    E preencho o campo First Name
+    Capture Page Screenshot    Checkout/evidencias/first_name.png
+
+    E preencho o campo Last Name
+    Capture Page Screenshot    Checkout/evidencias/last_name.png
+
+    E preencho o campo Zip/Postal Code
+    Capture Page Screenshot    Checkout/evidencias/zip_code.png
+
+    E vejo os detalhes do checkout
+    Capture Page Screenshot    Checkout/evidencias/checkout_details.png
+
+    E finalizo a compra
+    Capture Page Screenshot    Checkout/evidencias/finalizar_compra.png
 
     Close Browser    
 
@@ -78,23 +80,6 @@ E adiciono um produto ao carrinho
     Click Element    xpath=//button[contains(text(), 'ADD TO CART')]
     sleep       2s
 
-E retorno a página inicial
-    [Documentation]    Clica no botão de voltar para retornar à página inicial
-    [Tags]    produto
-    Click Element    xpath=//button[contains(text(), '<- Back')]
-    sleep       2s
-
-E vejo os detalhes de um outro produto
-    [Documentation]    Clica no link de um produto para ver os detalhes
-    [Tags]    produto
-    Click Link    id:item_4_title_link
-    sleep       4s
-
-E adiciono o outro produto ao carrinho
-    [Documentation]    Adiciona outro produto ao carrinho
-    [Tags]    carrinho
-    Click Element    xpath=//button[contains(text(), 'ADD TO CART')]
-    sleep       2s
 
 E acesso o carrinho
     [Documentation]    Clica no ícone do carrinho para acessar o carrinho de compras
@@ -112,4 +97,31 @@ E realizo o checkout
     [Documentation]    Clica no botão de checkout para iniciar o processo de compra
     [Tags]    checkout
     Click Element    xpath=//a[@class='btn_action checkout_button']
-    sleep       5s
+    sleep       3s
+
+E preencho o campo First Name
+    [Documentation]    Preenche o campo de nome com um nome válido
+    [Tags]    checkout
+    Input Text      id:first-name       Vinicius
+
+E preencho o campo Last Name
+    [Documentation]    Preenche o campo de sobrenome com um sobrenome válido
+    [Tags]    checkout
+    Input Text      id:last-name       Canedo
+
+E preencho o campo Zip/Postal Code
+    [Documentation]    Preenche o campo de código postal com um código válido
+    [Tags]    checkout
+    Input Text      id:postal-code     12345
+
+E vejo os detalhes do checkout
+    [Documentation]    Verifica os detalhes do checkout
+    [Tags]    checkout
+    Click Element    xpath=//input[@value='CONTINUE']
+    sleep       3s
+
+E finalizo a compra
+    [Documentation]    Clica no botão de finalizar compra
+    [Tags]    checkout
+    Click Element    xpath=//a[@class='btn_action cart_button']
+    sleep       6s
