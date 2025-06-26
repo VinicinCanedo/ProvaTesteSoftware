@@ -8,7 +8,9 @@ Os testes estão organizados nas seguintes pastas:
 - `Login e Logout/`: Contém os testes de login (válido e inválido) e logout.
 - `Produtos/`: Contém os testes relacionados à visualização e ordenação de produtos.
 - `Carrinho/`: Contém os testes para adicionar e remover produtos do carrinho de compras.
-- `Checkout/`: (Vazio no momento)
+- `Checkout/`: Contém os testes para a finalização da compra.
+
+> **Nota sobre as Evidências:** As evidências de teste (screenshots) são geradas automaticamente durante a execução de cada cenário. Elas são salvas em uma pasta chamada `evidencias`, localizada dentro do diretório de cada respectivo teste.
 
 ## Casos de Teste
 
